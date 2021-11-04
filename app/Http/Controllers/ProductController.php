@@ -21,12 +21,12 @@ class ProductController extends Controller
         return view('product.v_list', compact('product'));
     }
 
-    public function productDetail(Product $produk, $id){
+    public function productDetail(Product $product, $id){
         // if (! $produk = Product::where('id', $id)->where('tipeProduk', '=', 1)->first()) {
         //     abort(404);
         // }
         
-        $produk = $this->Product->getAllData();
-        return view('product.v_detail', compact('produk'));
+        $product = $this->Product->getData($id);
+        return view('product.v_detail', compact('product'));
     }
 }

@@ -13,4 +13,9 @@ class Product extends Model
         $jsonString = file_get_contents(base_path('resources/lang/foodie-rev.json'));
         return $data = json_decode($jsonString, true);
     }
+
+    public static function getData($id){
+        $jsonString = file_get_contents(base_path('resources/lang/foodie-rev.json'));
+        return $data = collect(json_decode($jsonString, true))->where('id', $id)->first();
+    }
 }

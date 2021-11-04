@@ -25,9 +25,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <div class="w3-quarter">
         @foreach ($product as $item)
-            <img src="{{ $item['picture_url'] }}" style="width:100%"></td>
-            <h3>{{ $item['title'] }}</h3>
-            <h3> Harga : Rp. {{ number_format($item['base_price'],2,',','.') }}</h3>
+            <a href="/detail/{{ $item['id'] }}" class="align-items-center">
+                <img src="{{ $item['picture_url'] }}" style="width:100%"></td>
+                <h3>{{ $item['title'] }}</h3>
+                <h3> Harga : Rp. {{ number_format($item['base_price'],2,',','.') }}</h3>
+            </a>
         @endforeach
     </div>
   </div>
