@@ -26,7 +26,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     <div class="w3-quarter">
         <img src="{{ $product['picture_url'] }}" style="width:100%"></td>
         <h3>{{ $product['title'] }}</h3>
-        <h3> Harga : Rp. {{ number_format($product['base_price'],2,',','.') }}</h3>
+        <h3>Harga : Rp. {{ number_format($product['base_price'],2,',','.') }}</h3>
+        <p>{{ $product['description'] }}</p>
+        <p>Kategori : {{ $product['categories'][0]  }}, {{ $product['categories'][1]  }}</p>
     </div>
   </div>
 </div>
